@@ -67,14 +67,4 @@ ul {
 .col-4 {
   flex-basis: calc(100% / 3);
 }
-
-.container {
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.row {
-  display: flex;
-  flex-flow: row wrap;
-}
 </style>
