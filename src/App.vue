@@ -10,15 +10,17 @@ export default {
     PageFooter,
   },
   data() {
-    return {};
+    return {
+      message: "Hello World!",
+    };
   },
 };
 </script>
 
 <template>
   <PageHeader />
-  <PageMain />
-  <PageFooter />
+  <!-- <PageMain />
+  <PageFooter /> -->
 </template>
 
 <style lang="scss">
