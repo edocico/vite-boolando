@@ -1,11 +1,14 @@
 <script>
 import ProductBox from "./ProductBox.vue";
+import ProductsJson from "../db.json";
 export default {
   components: {
     ProductBox,
   },
   data() {
-    return {};
+    return {
+      Products: ProductsJson,
+    };
   },
 };
 </script>

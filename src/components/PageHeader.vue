@@ -1,7 +1,9 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      HeaderMenu: ["Donna", "Uomo", "Bambino"],
+    };
   },
 };
 </script>
@@ -15,7 +17,7 @@ export default {
             <ul>
               <li><a href="#">Donna</a></li>
               <li><a href="#">Uomo</a></li>
-              <li><a href="#">Bambini</a></li>
+              <li><a href="#">Bambino</a></li>
             </ul>
           </div>
           <div class="col-4">
