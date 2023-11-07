@@ -1,7 +1,13 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      leftList: [
+        "Informazioni legali",
+        "Informativa sulla privacy",
+        "Diritto di recesso",
+      ],
+    };
   },
 };
 </script>
@@ -14,9 +20,11 @@ export default {
           <div class="col-6">
             <p>Boolando s.r.l</p>
             <ul class="left-list">
-              <li><a href="#">Informazioni legali</a></li>
-              <li><a href="#">Informativa sulla privacy</a></li>
-              <li><a href="#">Diritto di recesso</a></li>
+              <li v-for="(item, index) in leftList">
+                {{ item }}<a href="#"></a>
+              </li>
+              <!-- <li><a href="#">Informativa sulla privacy</a></li>
+              <li><a href="#">Diritto di recesso</a></li> -->
             </ul>
           </div>
           <div class="col-6">
