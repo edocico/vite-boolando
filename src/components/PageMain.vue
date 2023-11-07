@@ -1,14 +1,17 @@
 <script>
 import ProductBox from "./ProductBox.vue";
-import ProductsJson from "../db.json";
+import productsJson from "../db.json";
 export default {
   components: {
     ProductBox,
   },
   data() {
     return {
-      Products: ProductsJson,
+      products: productsJson.products,
     };
+  },
+  mounted() {
+    console.log(this.products);
   },
 };
 </script>
@@ -18,7 +21,7 @@ export default {
     <section class="product">
       <div class="container">
         <div class="row">
-          <ProductBox />
+          <ProductBox v-for="product in products" :item="product" />
         </div>
       </div>
     </section>

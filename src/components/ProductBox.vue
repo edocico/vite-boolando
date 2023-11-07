@@ -1,8 +1,9 @@
 <script>
 export default {
   data() {
-    return;
+    return {};
   },
+  methods: {},
   props: {
     item: {
       type: Object,
@@ -15,18 +16,25 @@ export default {
 <template>
   <div class="product-box">
     <div class="product-display">
-      <img class="product-image-a" src="/img/1.webp" alt="levi's shirt1" />
+      <img
+        class="product-image-a"
+        :src="'/img/' + item.frontImage"
+        alt="levi's shirt1"
+      />
       <!--immagine B-->
-      <img class="product-image-b" src="/img/1b.webp" alt="1b" />
+      <img class="product-image-b" :src="'/img/' + item.backImage" alt="1b" />
       <span class="heart">&hearts;</span>
-      <span class="red-label">-50%</span>
-      <span class="green-label">Sostenibilità</span>
+      <span :class="badge.type" v-for="(badge, index) in item.badges">
+        {{ badge.value }}</span
+      >
+      <!-- <span class="red-label">-50%</span>
+      <span class="green-label">Sostenibilità</span> -->
     </div>
     <div class="product-info">
-      <span class="brand">Levi's</span>
-      <span class="pruduct-title">RELAXED FIT TEE UNISEX</span>
+      <span class="brand">{{ item.brand }}</span>
+      <span class="pruduct-title">{{ item.name }}</span>
       <span class="pricetag">14,99 &euro;</span>
-      <span class="discount">29,99 &euro;</span>
+      <span class="discount">{{ item.price }} &euro;</span>
     </div>
   </div>
 </template>
@@ -55,7 +63,7 @@ export default {
   color: red;
 }
 
-.red-label {
+.discount {
   display: block;
   position: absolute;
   background-color: red;
@@ -67,7 +75,7 @@ export default {
   padding: 0 5px;
 }
 
-.green-label {
+.tag {
   display: block;
   position: absolute;
   background-color: green;

@@ -13,7 +13,7 @@ export default {
         <div class="row">
           <div class="col-6">
             <p>Boolando s.r.l</p>
-            <ul>
+            <ul class="left-list">
               <li><a href="#">Informazioni legali</a></li>
               <li><a href="#">Informativa sulla privacy</a></li>
               <li><a href="#">Diritto di recesso</a></li>
@@ -67,5 +67,10 @@ footer section {
 
 footer .row {
   justify-content: space-between;
+}
+
+.left-lift {
+  display: flex;
+  flex-direction: row;
 }
 </style>

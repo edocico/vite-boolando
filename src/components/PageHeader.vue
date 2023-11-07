@@ -15,7 +15,7 @@ export default {
         <div class="row">
           <div class="col-4">
             <ul>
-              <li v-for="(item, index) in this.HeaderMenu">
+              <li v-for="(item, index) in this.HeaderMenu" :key="index">
                 <a href="#"> {{ item }}</a>
               </li>
             </ul>
