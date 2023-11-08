@@ -23,7 +23,9 @@ export default {
       />
       <!--immagine B-->
       <img class="product-image-b" :src="'/img/' + item.backImage" alt="1b" />
-      <span class="heart">&hearts;</span>
+      <span class="heart" :class="item.isInFavorites ? 'favorites' : ''"
+        >&hearts;</span
+      >
       <span :class="badge.type" v-for="(badge, index) in item.badges">
         {{ badge.value }}</span
       >
@@ -43,6 +45,10 @@ export default {
 .product-box {
   flex-basis: calc(100% / 3);
   padding: 25px 10px;
+}
+
+.favorites {
+  color: red;
 }
 
 .product-display {

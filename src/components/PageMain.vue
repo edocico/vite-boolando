@@ -1,17 +1,28 @@
 <script>
 import ProductBox from "./ProductBox.vue";
-import productsJson from "../db.json";
+//import productsJson from "../db.json";
+import { store } from "../store";
+import axios from "axios";
+
 export default {
   components: {
     ProductBox,
   },
   data() {
     return {
-      products: productsJson.products,
+      //products: productsJson.products,
+      products: store.products,
     };
   },
   mounted() {
     console.log(this.products);
+  },
+  created() {
+    axios.get("http://localhost:3000/products").then((res) => {
+      const item = res.data;
+      console.log(res, this.products);
+      this.products = item;
+    });
   },
 };
 </script>
