@@ -11,7 +11,8 @@ export default {
   data() {
     return {
       //products: productsJson.products,
-      products: store.products,
+      // products: store.products,
+      store,
     };
   },
   mounted() {
@@ -20,8 +21,8 @@ export default {
   created() {
     axios.get("http://localhost:3000/products").then((res) => {
       const item = res.data;
-      console.log(res, this.products);
-      this.products = item;
+      console.log(res, item);
+      this.store.products = item;
     });
   },
 };
@@ -32,7 +33,7 @@ export default {
     <section class="product">
       <div class="container">
         <div class="row">
-          <ProductBox v-for="product in products" :item="product" />
+          <ProductBox v-for="product in store.products" :item="product" />
         </div>
       </div>
     </section>

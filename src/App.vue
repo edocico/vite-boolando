@@ -2,6 +2,7 @@
 import PageHeader from "./components/PageHeader.vue";
 import PageMain from "./components/PageMain.vue";
 import PageFooter from "./components/PageFooter.vue";
+import { store } from "./store";
 
 export default {
   components: {
@@ -10,9 +11,16 @@ export default {
     PageFooter,
   },
   data() {
-    return {};
+    return {
+      store,
+    };
   },
-  created() {},
+  maunted() {
+    console.log(this.store);
+  },
+  created() {
+    console.log(this.store);
+  },
 };
 </script>
 
