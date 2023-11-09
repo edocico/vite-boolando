@@ -1,5 +1,6 @@
 <script>
 export default {
+  emits: ["show"],
   data() {
     return {};
   },

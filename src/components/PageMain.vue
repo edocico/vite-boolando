@@ -20,7 +20,7 @@ export default {
   methods: {
     showModal(product) {
       this.modalOpen = true;
-      console.log("funzione");
+      //console.log("funzione");
       this.modalProduct = product;
     },
     closeModal() {
@@ -69,7 +69,13 @@ export default {
           <div class="col-6">
             <img :src="'/img/' + modalProduct.frontImage" alt="" />
           </div>
-          <div class="col-6">placeholder info</div>
+          <div class="col-6 desc">
+            <ul>
+              <li>
+                <span class="brand">Marca:</span> {{ modalProduct.brand }}
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -124,6 +130,16 @@ main {
     img {
       display: block;
       max-width: 200px;
+    }
+
+    .brand {
+      font-weight: 900;
+    }
+
+    .desc {
+      display: flex;
+      justify-content: flex-start;
+      flex-grow: 1;
     }
   }
 }
