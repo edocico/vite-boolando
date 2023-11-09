@@ -1,6 +1,6 @@
 <script>
 import ProductBox from "./ProductBox.vue";
-//import productsJson from "../db.json";
+
 import { store } from "../store";
 import axios from "axios";
 
@@ -10,8 +10,6 @@ export default {
   },
   data() {
     return {
-      //products: productsJson.products,
-      // products: store.products,
       store,
       modalOpen: false,
       modalProduct: {},
@@ -20,7 +18,7 @@ export default {
   methods: {
     showModal(product) {
       this.modalOpen = true;
-      //console.log("funzione");
+
       this.modalProduct = product;
     },
     closeModal() {
@@ -71,8 +69,9 @@ export default {
           </div>
           <div class="col-6 desc">
             <ul>
+              <li><span class="tag">Marca:</span> {{ modalProduct.brand }}</li>
               <li>
-                <span class="brand">Marca:</span> {{ modalProduct.brand }}
+                <span class="tag">Prezzo:</span> {{ modalProduct.price }} &euro;
               </li>
             </ul>
           </div>
@@ -132,7 +131,7 @@ main {
       max-width: 200px;
     }
 
-    .brand {
+    .tag {
       font-weight: 900;
     }
 
@@ -140,6 +139,10 @@ main {
       display: flex;
       justify-content: flex-start;
       flex-grow: 1;
+    }
+
+    .desc li {
+      margin-bottom: 20px;
     }
   }
 }
