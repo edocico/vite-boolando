@@ -25,6 +25,9 @@ export default {
       this.modalOpen = false;
       this.modalProduct = {};
     },
+    favorites() {
+      this.modalProduct.isInFavorites = !this.modalProduct.isInFavorites;
+    },
   },
   mounted() {
     console.log(this.products);
@@ -74,6 +77,7 @@ export default {
               <li>
                 <span class="tag">Prezzo:</span> {{ modalProduct.price }} &euro;
               </li>
+              <button class="add" @click="favorites">Aggiungi/Rimuovi</button>
             </ul>
           </div>
         </div>
@@ -144,6 +148,15 @@ main {
 
     .desc li {
       margin-bottom: 20px;
+    }
+
+    .add {
+      padding: 8px;
+      margin-top: 100px;
+      border-radius: 10px;
+      background-color: #ff6901;
+      color: white;
+      font-weight: 900;
     }
   }
 }
