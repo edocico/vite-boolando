@@ -14,15 +14,18 @@ export default {
       // products: store.products,
       store,
       modalOpen: false,
+      modalProduct: {},
     };
   },
   methods: {
-    showModal() {
+    showModal(product) {
       this.modalOpen = true;
       console.log("funzione");
+      this.modalProduct = product;
     },
     closeModal() {
       this.modalOpen = false;
+      this.modalProduct = {};
     },
   },
   mounted() {
@@ -55,7 +58,7 @@ export default {
     <div class="modal" v-if="modalOpen">
       <div class="card">
         <div class="card-header">
-          <p>placeholder prodotto</p>
+          <p>{{ modalProduct.name }}</p>
           <span class="cross"
             ><font-awesome-icon
               @click="closeModal"

@@ -32,7 +32,7 @@ export default {
       <!-- <span class="red-label">-50%</span>
       <span class="green-label">Sostenibilità</span> -->
     </div>
-    <div class="product-info" @click="$emit('show')">
+    <div class="product-info" @click="$emit('show', item)">
       <span class="brand">{{ item.brand }}</span>
       <span class="pruduct-title">{{ item.name }}</span>
       <span class="pricetag">14,99 &euro;</span>
