@@ -13,7 +13,17 @@ export default {
       //products: productsJson.products,
       // products: store.products,
       store,
+      modalOpen: false,
     };
+  },
+  methods: {
+    showModal() {
+      this.modalOpen = true;
+      console.log("funzione");
+    },
+    closeModal() {
+      this.modalOpen = false;
+    },
   },
   mounted() {
     console.log(this.products);
@@ -33,11 +43,78 @@ export default {
     <section class="product">
       <div class="container">
         <div class="row">
-          <ProductBox v-for="product in store.products" :item="product" />
+          <ProductBox
+            v-for="product in store.products"
+            :item="product"
+            @show="showModal"
+          />
         </div>
       </div>
     </section>
+
+    <div class="modal" v-if="modalOpen">
+      <div class="card">
+        <div class="card-header">
+          <p>placeholder prodotto</p>
+          <span class="cross"
+            ><font-awesome-icon
+              @click="closeModal"
+              icon="fa-regular fa-circle-xmark"
+          /></span>
+        </div>
+        <div class="card-body">
+          <div class="col-6">placeholder immagine</div>
+          <div class="col-6">placeholder info</div>
+        </div>
+      </div>
+    </div>
   </main>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+main {
+  position: relative;
+}
+.modal .card {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  background-color: white;
+  border-radius: 30px;
+  width: 100%;
+  max-width: 400px;
+  min-height: 300px;
+  box-shadow: 0px 3px 5px black;
+
+  .card-header {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ff6901;
+    padding: 20px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+  }
+  .card-header p {
+    text-transform: uppercase;
+  }
+
+  .card-header span {
+    font-size: 20px;
+  }
+
+  .card-body {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+
+  .col-6 {
+    flex-basis: calc(100 / 2);
+    padding: 10px;
+  }
+}
+</style>
