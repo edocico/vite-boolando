@@ -66,7 +66,9 @@ export default {
           /></span>
         </div>
         <div class="card-body">
-          <div class="col-6">placeholder immagine</div>
+          <div class="col-6">
+            <img :src="'/img/' + modalProduct.frontImage" alt="" />
+          </div>
           <div class="col-6">placeholder info</div>
         </div>
       </div>
@@ -113,11 +115,16 @@ main {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
-  }
 
-  .col-6 {
-    flex-basis: calc(100 / 2);
-    padding: 10px;
+    .col-6 {
+      flex-basis: calc(100 / 2);
+      padding: 10px;
+    }
+
+    img {
+      display: block;
+      max-width: 200px;
+    }
   }
 }
 </style>
