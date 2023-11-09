@@ -70,6 +70,7 @@ export default {
           <div class="col-6 desc">
             <ul>
               <li><span class="tag">Marca:</span> {{ modalProduct.brand }}</li>
+              <li><span class="tag">Modello:</span> {{ modalProduct.name }}</li>
               <li>
                 <span class="tag">Prezzo:</span> {{ modalProduct.price }} &euro;
               </li>
